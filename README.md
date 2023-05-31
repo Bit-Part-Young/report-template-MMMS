@@ -1,8 +1,6 @@
 # sjtu report template
 
-
+## How to build
 ```bash
-
-xelatex report-template-sjtu.tex
-
+make
 ```
