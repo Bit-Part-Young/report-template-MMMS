@@ -15,20 +15,14 @@ TARGET = $(MAIN).pdf
 # Define the default target
 all: $(TARGET)
 
-# Define the target to build the PDF output
+# Define the target to build the PDF output and clean up auxiliary files
 $(TARGET): $(MAIN).tex
 	$(LATEX_COMPILER) $(LATEX_FLAGS) $(MAIN).tex
 	rm -f $(MAIN).aux $(MAIN).log $(MAIN).out $(MAIN).toc
 
-# Define the target to clean up auxiliary files
-# clean:
-# 	rm -f $(TARGET) $(MAIN).aux $(MAIN).log $(MAIN).out $(MAIN).toc
-
-# Define the target to clean up all generated files
+# Define the target to clean up generated pdf files
 distclean: 
-# distclean: clean
 	rm -f $(MAIN).pdf
 
 # Phony targets (targets that are not real files)
 .PHONY: all distclean
-# .PHONY: all clean distclean
