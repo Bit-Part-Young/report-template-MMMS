@@ -1,7 +1,7 @@
 # Makefile for LaTeX compilation
 
 # Set the name of the main tex file (without the .tex extension)
-MAIN = report-template-sjtu
+MAIN = main
 
 # Set the LaTeX compiler
 LATEX_COMPILER = xelatex
