@@ -18,7 +18,11 @@ all: $(TARGET)
 # Define the target to build the PDF output and clean up auxiliary files
 $(TARGET): $(MAIN).tex
 	$(LATEX_COMPILER) $(LATEX_FLAGS) $(MAIN).tex
-	rm -f $(MAIN).aux $(MAIN).log $(MAIN).out $(MAIN).toc
+
+clean:
+	rm -f $(MAIN).aux ${MAIN}.bbl ${MAIN}.bcf $(MAIN).blg \
+		$(MAIN).fdb_latexmk $(MAIN).fls $(MAIN).log $(MAIN).out \
+		$(MAIN).run.xml $(MAIN).toc $(MAIN).xdv $(MAIN).synctex.gz
 
 # Define the target to clean up generated pdf files
 distclean: 
