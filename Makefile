@@ -1,7 +1,7 @@
-# Makefile for LaTeX compilation by Yangsl
+# Makefile for LaTeX compilation by yangsl
 
-# Updated by Shend Sept.25 2023
-# Now it supports compiling all .tex files in the directory at once
+# Optimized by Shend Sept.25 2023
+# supports compiling all .tex files in the directory at once
 
 # Set the name of the main tex file (without the .tex extension)
 TEXFILE = $(wildcard *.tex)
@@ -13,6 +13,8 @@ LATEX_COMPILER = xelatex
 # Set the target file (PDF output)
 TARGET = $(patsubst %.tex,%.pdf,${TEXFILE})
 
+.PHONY: all distclean clean
+
 # Define the default target
 all: $(TARGET)
 
@@ -23,18 +25,14 @@ $(TARGET): %.pdf : %.tex
 # Clean up auxiliary files
 clean:
 	$(foreach name, ${MAIN},												\
-		rm -f ${name}.tex, ${name}.aux ${name}.bbl ${name}.bcf ${name}.blg 	\
+		rm -f ${name}.aux ${name}.bbl ${name}.bcf ${name}.blg 	\
 		${name}.fdb_latexmk ${name}.fls ${name}.log ${name}.out 			\
 		${name}.run.xml ${name}.toc ${name}.xdv ${name}.synctex.gz;			\
 	)
 
-# Define the target to clean up generated pdf files
-distclean: 
-	rm -f ${TARGET}
-
 # Build PDF and clean
 auto: all clean
 
-# Phony targets (targets that are not real files)
-.PHONY: all distclean clean
-
+# Define the target to clean up generated pdf files
+distclean: 
+	rm -f ${TARGET}
