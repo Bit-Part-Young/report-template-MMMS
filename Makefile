@@ -24,10 +24,10 @@ $(TARGET): %.pdf : %.tex
 
 # Clean up auxiliary files
 clean:
-	$(foreach name, ${MAIN},												\
-		rm -f ${name}.aux ${name}.bbl ${name}.bcf ${name}.blg 	\
-		${name}.fdb_latexmk ${name}.fls ${name}.log ${name}.out 			\
-		${name}.run.xml ${name}.toc ${name}.xdv ${name}.synctex.gz;			\
+	$(foreach name, ${MAIN},                                        \
+		rm -f ${name}.aux ${name}.bbl ${name}.bcf ${name}.blg       \
+		${name}.fdb_latexmk ${name}.fls ${name}.log ${name}.out     \
+		${name}.run.xml ${name}.synctex.gz ${name}.toc ${name}.xdv; \
 	)
 
 # Build PDF and clean
