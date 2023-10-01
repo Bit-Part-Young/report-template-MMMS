@@ -1,94 +1,91 @@
-\documentclass[12pt, a4paper, oneside]{ctexart}
-\usepackage{amsmath, amsthm, amssymb, appendix, bm, graphicx, subcaption, 
-hyperref, mathrsfs}
+\documentclass[12pt,a4paper,oneside]{ctexart}
 \usepackage[a4paper,left=3cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
-
-\linespread{1.5}
-\newtheorem{theorem}{定理}[section]
-\newtheorem{definition}[theorem]{定义}
-\newtheorem{lemma}[theorem]{引理}
-\newtheorem{corollary}[theorem]{推论}
-\newtheorem{example}[theorem]{例}
-\newtheorem{proposition}[theorem]{命题}
-\renewcommand{\abstractname}{\Large\textbf{摘要}}
-
-%\newcommand{\ulfrule}{\xleaders\hbox{\underline{ }}\hfill\kern0pt}
-
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{appendix}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
 \usepackage{ulem}
 
-% 生成一定长度下划线并在其填充文字的新命令
+\linespread{1.5}
+
+
+%---------------------------------------------------------------------
+%   生成一定长度下划线并在其填充文字的新命令
+%---------------------------------------------------------------------
 \newcommand{\wideunderline}[2][2em]{%
 	\uline{\makebox[\ifdim\width>#1\width\else#1\fi][c]{#2}}%
 }
 
 \begin{document}
 	
+	%---------------------------------------------------------------------
+    %   封面页设置
+    %---------------------------------------------------------------------
+	% 首页无页眉页脚
 	\thispagestyle{empty}
 	
-	\begin{figure}[t!]
+	% 学校图标排版
+	\begin{figure}[!t]
 		\centering
-		% 插入第一张子图
+		
 		\begin{subfigure}{1.\linewidth}
 			\centering
-			\includegraphics[width=0.9\linewidth]{assets/Icons/SJTU_1.png}
-			%\caption{A red flower.}
+			\includegraphics[width=0.9\linewidth]{assets/Icons/banner_zh_sjtu.png}
 		\end{subfigure}
+		
 		\vspace{0.1em}%\vfill
 		
 		\begin{subfigure}{1.\linewidth}
 			\centering
-			\includegraphics[width=0.9\linewidth]{assets/Icons/SJTU_2.png}
-			%\caption{A red flower.}
+			\includegraphics[width=0.9\linewidth]{assets/Icons/banner_eng_sjtu.png}
 		\end{subfigure}
+		
 		\vspace{0.1em}%\vfill
 		
-		% 插入第三张子图
 		\begin{subfigure}{.5\linewidth}
 			\centering
-			\includegraphics[width=.7\linewidth]{assets/Icons/SJTU_3.png}
-			%\caption{A yellow flower.}
+			\includegraphics[width=.7\linewidth]{assets/Icons/badge_sjtu.png}
 		\end{subfigure}
-	
-		%\caption{Three flowers with different colors.}
-		%\label{fig:fig1}
+		
 	\end{figure}
 	
-	%\vspace{1.5cm}
-	%\vfill
+    %---------------------------------------------------------------------
 	
+	% 课程、个人信息
 	\begin{center}
-		\Huge\textbf{X X X X 课 程}
+		\Huge\textbf{多尺度材料模拟与计算}
 	\end{center}
 	
 	\begin{center}
-		\Huge\textbf{课程报告}
+		\LARGE\textbf{实验报告 - 简谐振子}
 	\end{center}
-	%\vspace{0.5cm}
-	%\vfill
+	
 	\vspace{1cm}
-	\begin{table}[h]
+	
+	\begin{table}[!h]
 		\centering
 		\Large
 		\begin{tabular}{lc}
-			\textbf{姓名:} & \wideunderline[6cm]{杨伸炉}  \\
-			%\hrulefill{杨伸炉} \
-			%\ %\underline{杨伸炉}
-			%\ulfrule \\
-			\textbf{学号:} & \wideunderline[6cm]{021050910071}  \\
-			%\underline{021050910071}\ulfrule \\
-			\textbf{学院:} & \wideunderline[6cm]{材料科学与工程学院}  \\
-			%\underline{材料科学与工程学院}\ulfrule \\
-			%\textbf{时间:} & 2021年7月 \\
+			\textbf{姓\qquad 名:} & \wideunderline[7cm]{杨伸炉}  \\
+			\textbf{学\qquad 号:} & \wideunderline[7cm]{021050910071}  \\
+			\textbf{学\qquad 院:} & \wideunderline[7cm]{材料科学与工程学院}  \\
 		\end{tabular}
 	\end{table}
+	
 	\vspace{0.5cm}
 	
 	\begin{center}
-		\Large\textbf{2022年04月}
+		\Large\textbf{2023年10月01日}
 	\end{center}
 	
 	\newpage
 	
+	%---------------------------------------------------------------------
+    %   摘要页
+    %---------------------------------------------------------------------
 	\thispagestyle{empty}
 	\begin{abstract}
 		这里是摘要. 
@@ -96,12 +93,20 @@ hyperref, mathrsfs}
 	\end{abstract}
 	
 	\newpage
+	
+	%---------------------------------------------------------------------
+    %   目录页设置
+    %---------------------------------------------------------------------
 	\pagenumbering{Roman}
 	\setcounter{page}{1}
 
 	\tableofcontents
 
 	\newpage
+	
+	%---------------------------------------------------------------------
+    %   正文
+    %---------------------------------------------------------------------
 	\setcounter{page}{1}
 	\pagenumbering{arabic}
 	
@@ -114,6 +119,9 @@ hyperref, mathrsfs}
 	
 	\newpage
 	
+	%---------------------------------------------------------------------
+    %   参考文献
+    %---------------------------------------------------------------------
 	\begin{thebibliography}{99}
 		\bibitem{a}作者. \emph{文献}[M]. 地点:出版社,年份.
 		\bibitem{b}作者. \emph{文献}[M]. 地点:出版社,年份.
@@ -121,6 +129,9 @@ hyperref, mathrsfs}
 	
 	\newpage
 	
+	%---------------------------------------------------------------------
+    %   附录
+    %---------------------------------------------------------------------
 	\begin{appendices}
 		\renewcommand{\thesection}{\Alph{section}}
 		\section{附录标题}
