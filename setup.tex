@@ -22,17 +22,31 @@
 \usepackage{chngcntr}
 \counterwithin{figure}{section}
 \counterwithin{table}{section}
+\counterwithin{equation}{section}
 
 % 图表的编号格式自定义为 "表/图 章节号-顺序号"
 \renewcommand{\thefigure}{\thesection-\arabic{figure}}
 \renewcommand{\thetable}{\thesection-\arabic{table}}
 
+% 公式的编号格式自定义为 "章节号-顺序号"
+\renewcommand{\theequation}{\thesection-\arabic{equation}}
+
 % 图表的标题字号为五号，加粗，编号与标题之间空一格
 \captionsetup[figure]{labelfont={bf,small,stretch=1.25}, textfont={bf,small,stretch=1.25}, labelsep=space}
 \captionsetup[table]{labelfont={bf,small,stretch=1.25}, textfont={bf,small,stretch=1.25}, labelsep=space}
 
-% 公式的编号格式自定义为 "章节号-顺序号"
-\renewcommand{\theequation}{\thesection-\arabic{equation}}
+
+% 将section的编号添加到pdf书签中
+\usepackage[atend]{bookmark}
+\bookmarksetup{
+  numbered,
+  addtohook={%
+    \ifnum\bookmarkget{level}>1 %
+      \bookmarksetup{numbered=false}%
+    \fi
+  },
+}
+
 
 % 页眉页脚设置
 \usepackage{fancyhdr}
