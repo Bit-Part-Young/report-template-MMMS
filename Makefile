@@ -1,38 +1,44 @@
-# Makefile for LaTeX compilation by yangsl
+# Makefile for SJTUThesis
 
-# Optimized by Shend Sept.25 2023
-# supports compiling all .tex files in the directory at once
+# Basename of thesis
+THESIS = main
 
-# Set the name of the main tex file (without the .tex extension)
-TEXFILE = $(wildcard *.tex)
-MAIN = $(patsubst %.tex,%,${TEXFILE})
+# Option for latexmk
+LATEXMK_OPT = -xelatex -time -file-line-error -halt-on-error -interaction=nonstopmode
+LATEXMK_OPT_PVC = $(LATEXMK_OPT) -pvc
 
-# Set the LaTeX compiler
-LATEX_COMPILER = xelatex
+# make deletion work on Windows
+ifdef SystemRoot
+	RM = del /Q
+	OPEN = start
+else
+	RM = rm -f
+	OPEN = open
+endif
 
-# Set the target file (PDF output)
-TARGET = $(patsubst %.tex,%.pdf,${TEXFILE})
+.PHONY : all pvc view wordcount clean cleanall FORCE_MAKE
 
-.PHONY: all distclean clean
+all : $(THESIS).pdf
 
-# Define the default target
-all: $(TARGET)
+$(THESIS).pdf : $(THESIS).tex FORCE_MAKE
+	@latexmk $(LATEXMK_OPT) $<
 
-# Define the target to build the PDF output
-$(TARGET): %.pdf : %.tex
-	$(LATEX_COMPILER) $^
+pvc : $(THESIS).tex
+	@latexmk $(LATEXMK_OPT_PVC) $(THESIS)
 
-# Clean up auxiliary files
-clean:
-	$(foreach name, ${MAIN},                                        \
-		rm -f ${name}.aux ${name}.bbl ${name}.bcf ${name}.blg       \
-		${name}.fdb_latexmk ${name}.fls ${name}.log ${name}.out     \
-		${name}.run.xml ${name}.synctex.gz ${name}.toc ${name}.xdv; \
-	)
+view : $(THESIS).pdf
+	$(OPEN) $<
 
-# Build PDF and clean
-auto: all clean
+wordcount : $(THESIS).tex
+	@if grep -v ^% $< | grep -q '\\documentclass\[[^\[]*lang\s*=\s*en'; then \
+		texcount $< -inc -char-only | awk '/total/ {getline; print "英文字符数\t\t\t:",$$4}'; \
+	else \
+		texcount $< -inc -ch-only   | awk '/total/ {getline; print "纯中文字数\t\t\t:",$$4}'; \
+	fi
+	@texcount $< -inc -chinese | awk '/total/ {getline; print "总字数（英文单词 + 中文字）\t:",$$4}'
 
-# Define the target to clean up generated pdf files
-distclean: 
-	rm -f ${TARGET}
+clean :
+	-@latexmk -c -silent $(THESIS).tex 2> /dev/null
+
+cleanall :
+	-@latexmk -C -silent $(THESIS).tex 2> /dev/null
