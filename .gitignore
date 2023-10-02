@@ -13,6 +13,7 @@
 *.xdv
 
 # latex compilation output pdf file
+*.dvi
 *.pdf
 
 *test*/
