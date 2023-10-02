@@ -12,7 +12,7 @@ LaTeX 文档编译：
 
 >只在Linux端测试过，Windows端请自行测试。
 
-- Makefile 编译：
+- Makefile 编译
 
 ```bash
 # 生成 PDF
