@@ -31,7 +31,14 @@ make cleanall
 
 ```bash
 latexmk -xelatex -time -halt-on-error main.tex
+
+# 方式2
+./run.sh
 ```
+
+---
+
+- 交叉引用包括：公式、图、表、章节之间、章节引用附录
 
 ---
 
@@ -39,3 +46,7 @@ To do:
 
 - [ ] 页眉设置
 - [ ] 将数学字体设置为 Times New Roman
+- [ ] 代码环境
+- [ ] 参考文献的标签指向有问题，指向了结论部分
+- [ ] 参考文献 居中设置
+
