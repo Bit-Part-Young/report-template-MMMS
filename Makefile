@@ -1,13 +1,11 @@
 # Makefile for report-template-sjtu
-# reference file: SJTUThesis Makefile
-# >https://github.com/sjtug/SJTUThesis/blob/master/Makefile
+# reference: https://github.com/sjtug/SJTUThesis/blob/master/Makefile
 
 # Basename of tex file
 OBJ = main
 
 # Option for latexmk
-LATEXMK_COMPILER = -xelatex
-LATEXMK_OPT = $(LATEXMK_COMPILER) -time -file-line-error -halt-on-error -interaction=nonstopmode
+LATEXMK_OPT = -time -file-line-error -halt-on-error -interaction=nonstopmode
 
 .PHONY : all pvc clean cleanall FORCE_MAKE auto help
 
@@ -28,8 +26,10 @@ $(OBJ).pdf : $(OBJ).tex FORCE_MAKE
 
 clean :
 	-@latexmk -c -silent $(OBJ).tex 2> /dev/null
+	-@rm -f $(OBJ).bbl 2> /dev/null
 
 cleanall :
 	-@latexmk -C -silent $(OBJ).tex 2> /dev/null
+	-@rm -f $(OBJ).bbl 2> /dev/null
 
 auto: all clean
