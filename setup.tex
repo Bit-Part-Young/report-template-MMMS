@@ -2,14 +2,12 @@
 
 \usepackage[a4paper,left=3cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
 \usepackage{amsmath,amsthm,amssymb}
-\usepackage{appendix}
 \usepackage{bm}
 \usepackage{mathrsfs}
 
-
 \usepackage{titlesec}
-% section标题左对齐
-\titleformat{\section}{\raggedright\Large\bfseries}{\thesection}{1em}{}
+\usepackage{titletoc}
+\usepackage[titletoc]{appendix}
 
 \usepackage{graphicx}
 % 定义图片文件目录与扩展名
@@ -48,6 +46,11 @@
 }
 
 
+% 调整itemize环境item之间的间距
+\let\origitemize\itemize
+\def\itemize{\origitemize\itemsep0em}
+
+
 % 页眉页脚设置
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -61,8 +64,6 @@
 \cfoot{\thepage}
 
 
-
-
 % 使用 BibLaTeX 处理参考文献
 %   biblatex-gb7714-2015 常用选项
 %     gbnamefmt=lowercase     姓名大小写由输入信息确定
@@ -72,6 +73,8 @@
 \setlength{\bibitemsep}{0pt}
 % 导入参考文献数据库
 \addbibresource{refs.bib}
+\renewcommand{\bibname}{参考文献}
+
 
 % 使用三线表：toprule，midrule，bottomrule。
 \usepackage{booktabs}

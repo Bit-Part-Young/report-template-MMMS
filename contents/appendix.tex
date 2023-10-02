@@ -6,42 +6,47 @@
 %   附录
 %---------------------------------------------------------------------
 
-\begin{appendices}
-    \renewcommand{\thesection}{\Alph{section}}
-    \section{附录}
-    这里是附录。这里是附录。这里是附录。这里是附录。这里是附录。
-    这里是附录。这里是附录。这里是附录。这里是附录。这里是附录。
+\appendix
 
-    % 代码测试
+\titleformat{\section}{\centering\Large\bfseries}{附录~\Alph{section}}{1em}{}
 
-    % \begin{codeblock}[language=C]
-    % 	#include <stdio.h>
-    % 	#include <unistd.h>
-    % 	#include <sys/types.h>
-    % 	#include <sys/wait.h>
+\section{第一部分}\label{sec:appendix-1}
 
-    % 	int main() {
-    % 	pid_t pid;
+这里是附录A。这里是附录A。这里是附录A。这里是附录A。这里是附录A。
+这里是附录A。这里是附录A。这里是附录A。这里是附录A。这里是附录A。
 
-    % 	switch ((pid = fork())) {
-    % 	case -1:
-    % 		printf("fork failed\n");
-    % 		break;
-    % 	case 0:
-    % 		/* child calls exec */
-    % 		execl("/bin/ls", "ls", "-l", (char*)0);
-    % 		printf("execl failed\n");
-    % 		break;
-    % 	default:
-    % 		/* parent uses wait to suspend execution until child finishes */
-    % 		wait((int*)0);
-    % 		printf("is completed\n");
-    % 		break;
-    % 	}
+\section{第二部分}
 
-    % 	return 0;
-    % 	}
-    % \end{codeblock}
+这里是附录B。这里是附录B。这里是附录B。这里是附录B。这里是附录B。
+这里是附录B。这里是附录B。这里是附录B。这里是附录B。这里是附录B。
 
+% 代码测试
 
-\end{appendices}
+% \begin{codeblock}[language=C]
+% 	#include <stdio.h>
+% 	#include <unistd.h>
+% 	#include <sys/types.h>
+% 	#include <sys/wait.h>
+
+% 	int main() {
+% 	pid_t pid;
+
+% 	switch ((pid = fork())) {
+% 	case -1:
+% 		printf("fork failed\n");
+% 		break;
+% 	case 0:
+% 		/* child calls exec */
+% 		execl("/bin/ls", "ls", "-l", (char*)0);
+% 		printf("execl failed\n");
+% 		break;
+% 	default:
+% 		/* parent uses wait to suspend execution until child finishes */
+% 		wait((int*)0);
+% 		printf("is completed\n");
+% 		break;
+% 	}
+
+% 	return 0;
+% 	}
+% \end{codeblock}

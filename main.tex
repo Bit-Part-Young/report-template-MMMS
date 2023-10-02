@@ -7,37 +7,39 @@
 
 \begin{document}
 	
-	% 封面页
-	\input{contents/cover}
-	
-	% 摘要页
-	% \input{contents/abstract}
-	
-	%---------------------------------------------------------------------
-    %   目录页设置
-    %---------------------------------------------------------------------
-	\pagenumbering{Roman}
-	\setcounter{page}{1}
+% 封面页
+\input{contents/cover}
 
-	\tableofcontents
+% 摘要页
+% \input{contents/abstract}
 
-	\newpage
-	
+%---------------------------------------------------------------------
+%   目录页设置
+%---------------------------------------------------------------------
+\pagenumbering{Roman}
+\setcounter{page}{1}
 
-	% 正文页
-	\input{contents/content}
-	
+\tableofcontents
 
-	\newpage
+\newpage
 
-	%---------------------------------------------------------------------
-    %   参考文献
-    %---------------------------------------------------------------------
-	\printbibliography[heading=bibintoc,title={参考文献}]
 
-	
-	% 附录页
-	\input{contents/appendix}
+% 正文页
+\input{contents/content}
+
+
+\newpage
+
+%---------------------------------------------------------------------
+%   参考文献
+%---------------------------------------------------------------------
+
+\printbibliography[heading=bibintoc]
+% \printbibliography[heading=bibintoc,title={参考文献}]
+
+
+% 附录页
+\input{contents/appendix}
 
 	
 \end{document}
