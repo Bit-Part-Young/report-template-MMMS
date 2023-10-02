@@ -4,13 +4,15 @@ WIP...
 
 《多尺度材料模拟与计算》实验报告 LaTeX 模板。
 
-> 本模板 tex 文件结构、内容主要参考 [SJTUThesis](https://github.com/sjtug/SJTUThesis)。
+>本模板 tex 文件结构、内容主要参考 [SJTUThesis](https://github.com/sjtug/SJTUThesis)。
+>
+>本模板内容较为简略，欢迎感兴趣、有能力的同学对其进行丰富扩展。
 
 ---
 
 LaTeX 文档编译：
 
->只在Linux端测试过，Windows端请自行测试。
+>只在 Linux 端测试过，Windows 端请自行测试。
 
 - Makefile 编译
 
