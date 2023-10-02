@@ -6,11 +6,93 @@
 \setcounter{page}{1}
 \pagenumbering{arabic}
 
-\section{一级标题}
+\section{实验目的}
 
-\subsection{二级标题}
+这里是目的。这里是目的。这里是目的。这里是目的。这里是目的。
+这里是目的。这里是目的。这里是目的。这里是目的。这里是目的。
+
+\section{实验方法}
+
+这里是实验方法。这里是实验方法。这里是实验方法。这里是实验方法。这里是实验方法。
+这里是实验方法。这里是实验方法。这里是实验方法。这里是实验方法。这里是实验方法。
+
+无编号的公式
+\begin{equation*}
+    E_p = \frac{1}{2} k x^2
+\end{equation*}
+
+有编号的公式，如公式~\ref{eq:kinetic-energy}。
+\begin{equation}
+    E_k = \frac{1}{2} m v^2
+    \label{eq:kinetic-energy}
+\end{equation}
 
 
-这里是正文. 
+\section{实验内容}
+
+\subsection{内容1}
+
+这里是实验内容1。这里是实验内容1。这里是实验内容1。这里是实验内容1。这里是实验内容1。
+这里是实验内容1。这里是实验内容1。这里是实验内容1。这里是实验内容1。这里是实验内容1。
+
+三线表，如表~\ref{tab:exp-data}。
+
+\begin{longtable}[c]{ccc}
+    % \label 后面需要加 \\，否则会报错
+    \caption{实验数据}
+    \label{tab:exp-data} \\
+    \toprule
+    \textbf{编号} & \textbf{物理量} & \textbf{数值} \\
+    \midrule
+    \endhead
+    1 & $m$ & 0.1 \\
+    2 & $k$ & 1.0 \\
+    3 & $x$ & 0.2 \\
+    \bottomrule
+\end{longtable}
+
+
+
+\subsection{内容2}
+
+这里是实验内容2。这里是实验内容2。这里是实验内容2。这里是实验内容2。这里是实验内容2。
+这里是实验内容2。这里是实验内容2。这里是实验内容2。这里是实验内容2。这里是实验内容2。
+
+单张图，如图~\ref{fig:single-figure}。
+\begin{figure}[!htp]
+    \centering
+    \includegraphics[width=4cm]{Icons/badge_sjtu.png}
+    \caption{单张图}
+    \label{fig:single-figure}
+\end{figure}
+
+
+两张图并排且共用图题，如图~\ref{fig:two-figures}。
+\begin{figure}[!htp]
+    \centering
+    \includegraphics[height=2cm]{Icons/badge_sjtu.png}
+    \hspace{1cm}
+    \includegraphics[height=2cm]{Icons/badge_sjtu.png}
+    \caption{两张图并排}
+    \label{fig:two-figures}
+\end{figure}
+
+
+\section{分析与讨论}
+
+这里是分析与讨论。这里是分析与讨论。这里是分析与讨论。这里是分析与讨论。这里是分析与讨论。
+这里是分析与讨论。这里是分析与讨论。这里是分析与讨论。这里是分析与讨论。这里是分析与讨论。
+
+学位论文\cite{Zhang1998}，专利文献\cite{Jiang1989,HBLZ2001}，
+专著中析出的文献\cite{Cheng1999,GBT2659}，期刊中析出的文献\cite{Li1999,Li2000}，
+报纸中析出的文献\cite{Ding2000}, 电子文献\cite{Jiang1999,Christine1998,Xiao2001}。
+
+文献引用\cite{Zhang1998,Jiang1999,Christine1998,Xiao2001}。
+
+
+\section{结论}
+
+这里是结论。这里是结论。这里是结论。这里是结论。这里是结论。
+这里是结论。这里是结论。这里是结论。这里是结论。这里是结论。
 
 \newpage

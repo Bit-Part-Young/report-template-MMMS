@@ -4,14 +4,49 @@
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{appendix}
 \usepackage{bm}
-\usepackage{subcaption}
 \usepackage{mathrsfs}
 
+
+\usepackage{titlesec}
+% section标题左对齐
+\titleformat{\section}{\raggedright\Large\bfseries}{\thesection}{1em}{}
 
 \usepackage{graphicx}
 % 定义图片文件目录与扩展名
 \graphicspath{{assets/}}
 \DeclareGraphicsExtensions{.pdf,.eps,.png,.jpg,.jpeg}
+
+\usepackage{subcaption}
+
+% 表和图的计数器分开
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
+% 图表的编号格式自定义为 "表/图 章节号-顺序号"
+\renewcommand{\thefigure}{\thesection-\arabic{figure}}
+\renewcommand{\thetable}{\thesection-\arabic{table}}
+
+% 图表的标题字号为五号，加粗，编号与标题之间空一格
+\captionsetup[figure]{labelfont={bf,small,stretch=1.25}, textfont={bf,small,stretch=1.25}, labelsep=space}
+\captionsetup[table]{labelfont={bf,small,stretch=1.25}, textfont={bf,small,stretch=1.25}, labelsep=space}
+
+% 公式的编号格式自定义为 "章节号-顺序号"
+\renewcommand{\theequation}{\thesection-\arabic{equation}}
+
+% 页眉页脚设置
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% 清空页眉页脚
+\fancyhf{} 
+\lhead{}
+\chead{}
+\rhead{}
+% 将页眉线的宽度设为 0
+\renewcommand{\headrulewidth}{0pt}
+\cfoot{\thepage}
+
+
 
 
 % 使用 BibLaTeX 处理参考文献
@@ -27,15 +62,15 @@
 % 使用三线表：toprule，midrule，bottomrule。
 \usepackage{booktabs}
 
+% 使用长表格
+\usepackage{longtable}
+
 % 表格中支持跨行
 % \usepackage{multirow}
 
 % 表格中数字按小数点对齐
 % \usepackage{dcolumn}
 % \newcolumntype{d}[1]{D{.}{.}{#1}}
-
-% 使用长表格
-% \usepackage{longtable}
 
 % 附带脚注的表格
 % \usepackage{threeparttable}
