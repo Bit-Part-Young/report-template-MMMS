@@ -1,6 +1,6 @@
 # 《多尺度材料模拟与计算》实验报告 LaTeX 模板
 
-- 作者：小小角色、走楼梯啊
+- 作者：小小角色
 - 创建时间：2023.10.03
 - 本模板 tex 文件结构、内容主要参考 [SJTUThesis](https://github.com/sjtug/SJTUThesis)
 - 以下内容如有错误或疑问，或友好交流互动，请在该 repo 中提 [Issues](https://gitee.com/yangsl306/report-template-MMMS/issues/new)
@@ -49,5 +49,5 @@ latexmk -xelatex -time -halt-on-error main.tex
 - [ ] 页眉设置
 - [ ] 将数学字体设置为 Times New Roman
 - [x] 代码环境
-- [x] 参考文献 居中设置
+- [x] "参考文献"字符居中设置
 - [ ] 参考文献的标签指向有问题，指向了结论部分
