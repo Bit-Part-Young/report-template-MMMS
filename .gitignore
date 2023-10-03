@@ -14,7 +14,7 @@
 
 # latex compilation output pdf file
 *.dvi
-*.pdf
+main.pdf
 
 *test*/
 
