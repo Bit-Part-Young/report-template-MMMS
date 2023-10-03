@@ -1,4 +1,4 @@
-# sjtu report template
+# report template MMMS
 
 WIP...
 
@@ -17,22 +17,30 @@ LaTeX 文档编译：
 - Makefile 编译
 
 ```bash
-# 生成 PDF
+# 生成 pdf 并删除中间文件
+make
+# make auto
+
+# 打印帮助信息
+make help
+
+# 生成 pdf
 make all
 
 # 删除中间文件
 make clean
 
-# 删除中间文件和 PDF
+# 删除中间文件、pdf
 make cleanall
 ```
 
 - 手动编译
 
 ```bash
+# 方式 1
 latexmk -xelatex -time -halt-on-error main.tex
 
-# 方式2
+# 方式 2
 ./run.sh
 ```
 
