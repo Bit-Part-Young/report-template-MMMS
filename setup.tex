@@ -4,6 +4,7 @@
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{bm}
 \usepackage{mathrsfs}
+\usepackage{upgreek}  % \uppi 圆周率符号
 
 \usepackage{titlesec}
 \usepackage{titletoc}
@@ -95,47 +96,67 @@
 % 附带脚注的长表格
 % \usepackage{threeparttablex}
 
-% 代码环境宏包
-% \usepackage{listings}
-% \usepackage{color}
-% \lstdefinestyle{lstStyleCode}{%
-%   aboveskip         = \medskipamount,
-%   belowskip         = \medskipamount,
-%   basicstyle        = \ttfamily\zihao{6},
-%   commentstyle      = \slshape\color{black!60},
-%   stringstyle       = \color{green!40!black!100},
-%   keywordstyle      = \bfseries\color{blue!50!black},
-%   extendedchars     = false,
-%   upquote           = true,
-%   tabsize           = 2,
-%   showstringspaces  = false,
-%   xleftmargin       = 1em,
-%   xrightmargin      = 1em,
-%   breaklines        = false,
-%   framexleftmargin  = 1em,
-%   framexrightmargin = 1em,
-%   backgroundcolor   = \color{gray!10},
-%   columns           = flexible,
-%   keepspaces        = true,
-%   texcl             = true,
-%   mathescape        = true
-% }
-% \lstnewenvironment{codeblock}[1][]{%
-%   \lstset{style=lstStyleCode,#1}}{}
-
 % 确定浮动对象的位置，可以使用 [H]，强制将浮动对象放到这里（可能效果很差）
 % \usepackage{float}
 
 
-\usepackage{ulem}
-\linespread{1.5}
+% 代码展示设置
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\usepackage{listings}
+\lstset{
+  frame=tb,
+	language=Python,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=left, % 设置行号位置none不显示行号
+	%numberstyle=\tiny\courier, % 设置行号大小  
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=4,
+	extendedchars=false % 解决代码跨页时，章节标题，页眉等汉字不显示的问题  
+}
+
 
 %---------------------------------------------------------------------
 %   生成一定长度下划线并在其填充文字的新命令
 %---------------------------------------------------------------------
+\usepackage{ulem}
+\linespread{1.5}
+
 \newcommand{\wideunderline}[2][2em]{%
 	\uline{\makebox[\ifdim\width>#1\width\else#1\fi][c]{#2}}%
 }
 
 % hyperref 宏包在最后调用
 \usepackage{hyperref}
+
+
+% 直立体数学符号
+\providecommand{\dd}{\mathop{}\!\mathrm{d}}
+\providecommand{\ee}{\mathrm{e}}
+\providecommand{\ii}{\mathrm{i}}
+\providecommand{\jj}{\mathrm{j}}
+
+
+% 用于写文档的命令
+% 宏包中的命令
+\DeclareRobustCommand\cs[1]{\texttt{\char`\\#1}}
+% 环境名
+\DeclareRobustCommand\env[1]{\texttt{#1}}
+% 宏包名
+\DeclareRobustCommand\pkg[1]{\textsf{#1}}
+% 文件名
+\DeclareRobustCommand\file[1]{\nolinkurl{#1}}
+% 邮箱
+\providecommand{\email}[1]{\href{mailto:#1}{\urlstyle{tt}\nolinkurl{#1}}}

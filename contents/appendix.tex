@@ -6,8 +6,6 @@
 %   附录
 %---------------------------------------------------------------------
 
-\appendix
-
 \titleformat{\section}{\centering\Large\bfseries}{附录~\Alph{section}}{1em}{}
 
 \section{第一部分}\label{sec:appendix-1}
@@ -15,38 +13,91 @@
 这里是附录A。这里是附录A。这里是附录A。这里是附录A。这里是附录A。
 这里是附录A。这里是附录A。这里是附录A。这里是附录A。这里是附录A。
 
+\subsection{代码环境测试}
+
+\subsubsection{python编程语言}
+
+\begin{lstlisting}[language=python]
+import argparse
+
+
+def handle_read(args):
+    print(args)
+    print(args.path, args.length, args.key)
+
+
+def handle_write(args):
+    print(args)
+    print(args.path, args.encoding)
+
+
+def main():
+    """
+    argparse处理具有2种不同参数数目的函数
+    """
+    parser = argparse.ArgumentParser()
+
+    subparsers = parser.add_subparsers(help='commands')
+
+    read_parser = subparsers.add_parser(name='read', help='read file')
+    read_parser.add_argument('--path', required=True, help="file path")
+    read_parser.add_argument('--length', required=True, help="file length")
+    read_parser.add_argument('--key', required=True, help="file key")
+    read_parser.set_defaults(func=handle_read)  # 绑定处理函数
+
+    write_parser = subparsers.add_parser(name='write', help='write file')
+    write_parser.add_argument('--path', required=True, help="file path")
+    write_parser.add_argument('--encoding', required=True, help="file encoding")
+    write_parser.set_defaults(func=handle_write)    # 绑定处理函数
+
+    args = parser.parse_args()
+    # 执行函数功能
+    args.func(args)
+
+
+if __name__ == '__main__':
+    main()
+
+\end{lstlisting}
+
+
+\subsubsection{C编程语言}
+
+\begin{lstlisting}[language=c]
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+
+int main() {
+pid_t pid;
+
+switch ((pid = fork())) {
+case -1:
+    printf("fork failed\n");
+    break;
+case 0:
+    /* child calls exec */
+    execl("/bin/ls", "ls", "-l", (char*)0);
+    printf("execl failed\n");
+    break;
+default:
+    /* parent uses wait to suspend execution until child finishes */
+    wait((int*)0);
+    printf("is completed\n");
+    break;
+}
+
+return 0;
+}
+\end{lstlisting}
+
+
+\newpage
+
 \section{第二部分}
 
 这里是附录B。这里是附录B。这里是附录B。这里是附录B。这里是附录B。
 这里是附录B。这里是附录B。这里是附录B。这里是附录B。这里是附录B。
 
-% 代码测试
-
-% \begin{codeblock}[language=C]
-% 	#include <stdio.h>
-% 	#include <unistd.h>
-% 	#include <sys/types.h>
-% 	#include <sys/wait.h>
-
-% 	int main() {
-% 	pid_t pid;
-
-% 	switch ((pid = fork())) {
-% 	case -1:
-% 		printf("fork failed\n");
-% 		break;
-% 	case 0:
-% 		/* child calls exec */
-% 		execl("/bin/ls", "ls", "-l", (char*)0);
-% 		printf("execl failed\n");
-% 		break;
-% 	default:
-% 		/* parent uses wait to suspend execution until child finishes */
-% 		wait((int*)0);
-% 		printf("is completed\n");
-% 		break;
-% 	}
-
-% 	return 0;
-% 	}
-% \end{codeblock}
+E-mail: \email{3304839708@qq.com}
