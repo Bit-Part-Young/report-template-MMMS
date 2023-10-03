@@ -1,6 +1,6 @@
 # 《多尺度材料模拟与计算》实验报告 LaTeX 模板
 
-- 作者：小小角色
+- 作者：小小角色、走楼梯啊
 - 创建时间：2023.10.03
 - 本模板 tex 文件结构、内容主要参考 [SJTUThesis](https://github.com/sjtug/SJTUThesis)
 - 以下内容如有错误或疑问，或友好交流互动，请在该 repo 中提 [Issues](https://gitee.com/yangsl306/report-template-MMMS/issues/new)
