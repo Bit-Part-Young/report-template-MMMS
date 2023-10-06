@@ -10,7 +10,7 @@
 
 ## 文档结构
 
-```javascript
+```txt
 ├── assets
 │   ├── Figures
 │   ├── Icons
@@ -72,7 +72,9 @@ latexmk -xelatex -time -halt-on-error main.tex
 
 ---
 
-## 文档封面
+## 文档内容
+
+完整文档内容见 [main_v0.0.2_20231003.pdf](./main_v0.0.2_20231003.pdf)。
 
 ![文档封面](./assets/pdf_fig_cover.png)
 
