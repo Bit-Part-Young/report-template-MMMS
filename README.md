@@ -89,3 +89,4 @@ latexmk -xelatex -time -halt-on-error main.tex
 - [x] 代码环境
 - [x] "参考文献"字符居中设置
 - [ ] 参考文献的标签指向有问题，指向了结论部分
+- [ ] 本 LaTeX 模板的页面右边距设置与 SJTUThesis 有差别，待调整
