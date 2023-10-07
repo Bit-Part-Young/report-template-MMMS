@@ -8,9 +8,9 @@
 
 ---
 
-## 本课程实验报告提交要求
+## 课程实验报告提交要求
 
-- 框架及内容需完整：框架上，一般需要有实验目的、方法、内容、结果分析、结论、参考文献等部分；内容上，需要 pdf 文档 + 完整的源码 + 数据图片等其他资料，请将这些资料打包压缩上传至 canvas
+- **框架及内容需完整：框架上，一般需要有实验目的、方法、内容、结果分析、结论、参考文献等部分；内容上，需要 pdf 文档 + 完整的源码 + 数据图片等其他资料，请将这些资料打包压缩上传至 canvas**
 - 如有同学使用 python 编写程序，也可使用 jupyter notebook 的形式写程序 + 实验报告
 - 如有同学会使用 LaTeX，可使用 [report-template-MMMS: 《多尺度材料模拟与计算》实验报告 LaTeX 模板](https://gitee.com/yangsl306/report-template-MMMS) 提供的模板，具体使用方法见 repo 中的 README.md
 - 平时作业 LaTeX 模板（待完善），可使用 [report-template-MMMS: 《多尺度材料模拟与计算》作业 LaTeX 模板 - Gitee.com](https://gitee.com/yangsl306/report-template-MMMS/tree/homework/) ，具体使用方法见 repo 中的 README.md
