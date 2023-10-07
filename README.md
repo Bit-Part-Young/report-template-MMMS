@@ -7,4 +7,50 @@
 
 ---
 
+## LaTeX 文档编译
+
+>只在 Linux 端测试过，Windows 端请自行测试（应该不难）。
+
+### Makefile 编译
+
+```bash
+# 生成 pdf 并删除中间文件
+make
+# make auto
+
+# 打印帮助信息
+make help
+
+# 生成 pdf
+make all
+
+# 删除中间文件
+make clean
+
+# 删除中间文件、pdf
+make cleanall
+```
+
+### 手动编译
+
+```bash
+# 方式 1
+latexmk -xelatex -time -halt-on-error main.tex
+
+# 方式 2
+./run.sh
+```
+
+---
+
+## 文档内容
+
+完整文档内容见 [main_v0.0.0_20231007.pdf](./main_v0.0.0_20231007.pdf)。
+
+![文档正文](./assets/pdf_fig_content.png)
+
+---
+
 ## To do
+
+- [ ] 待完善
