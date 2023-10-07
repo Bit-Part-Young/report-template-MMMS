@@ -38,6 +38,11 @@
 
 ## LaTeX 文档编译
 
+```bash
+git clone https://gitee.com/yangsl306/report-template-MMMS.git
+cd report-template-MMMS
+```
+
 >只在 Linux 端测试过，Windows 端请自行测试（应该不难）。
 
 ### Makefile 编译
