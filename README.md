@@ -98,7 +98,7 @@ latexmk -xelatex -time -halt-on-error main.tex
 
 ## 文档内容
 
-完整文档内容见 [main_v0.0.3_20231013.pdf](./main_v0.0.3_20231013.pdf)。
+完整文档内容见 [main_20231013.pdf](./main_20231013.pdf)。
 
 ![文档封面](./assets/pdf_fig_cover.png)
 
