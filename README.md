@@ -47,7 +47,9 @@
 
 ---
 
-## LaTeX 文档编译
+## 使用
+
+### LaTeX 文档编译
 
 ```bash
 git clone https://gitee.com/yangsl306/report-template-MMMS.git
@@ -56,7 +58,7 @@ cd report-template-MMMS
 
 >只在 Linux 端测试过，Windows 端请自行测试（应该不难）。
 
-### Makefile 编译
+#### Makefile 编译
 
 ```bash
 # 生成 pdf 并删除中间文件
@@ -76,7 +78,7 @@ make clean
 make cleanall
 ```
 
-### 手动编译
+#### 手动编译
 
 ```bash
 # 方式 1
@@ -85,6 +87,12 @@ latexmk -xelatex -time -halt-on-error main.tex
 # 方式 2
 ./run.sh
 ```
+
+### 使用 Overleaf
+
+- [ ] Overleaf 模板申请中
+
+如果需要在其他在线 LaTeX 平台上使用（比如 [SJTU LaTeX 文档助手, 在线LaTeX编辑器](https://latex.sjtu.edu.cn)），可以点击 [report-template-MMMS releases](https://gitee.com/yangsl306/report-template-MMMS/releases) 下载 最新 Releases，然后上传至相应平台。请注意，Overleaf 默认使用 pdflatex 编译，需设置使用 XeLaTeX 编译器。
 
 ---
 
