@@ -132,10 +132,11 @@
 %   生成一定长度下划线并在其填充文字的新命令
 %---------------------------------------------------------------------
 \usepackage{ulem}
-\linespread{1.5}
+\linespread{1.5}  % 行距
+\renewcommand{\ULthickness}{1.5pt} % 下划线粗细
 
-\newcommand{\wideunderline}[2][2em]{%
-	\uline{\makebox[\ifdim\width>#1\width\else#1\fi][c]{#2}}%
+\newcommand{\wideunderline}[2][2em]{
+	\uline{\makebox[\ifdim\width>#1\width\else#1\fi][c]{#2}}
 }
 
 
