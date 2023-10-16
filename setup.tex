@@ -138,6 +138,70 @@
 	\uline{\makebox[\ifdim\width>#1\width\else#1\fi][c]{#2}}%
 }
 
+
+%---------------------------------------------------------------------
+%   封面页设置
+%---------------------------------------------------------------------
+\newcommand{\coverinfo}[6]{
+% 首页无页眉页脚
+\thispagestyle{empty}
+
+% 学校图标排版
+\begin{figure}[!t]
+    \centering
+    
+    \begin{subfigure}{1.\linewidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{Icons/banner_zh_sjtu.png}
+    \end{subfigure}
+    
+    \vspace{0.1em}%\vfill
+    
+    \begin{subfigure}{1.\linewidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{Icons/banner_eng_sjtu.png}
+    \end{subfigure}
+    
+    \vspace{0.1em}%\vfill
+    
+    \begin{subfigure}{.5\linewidth}
+        \centering
+        \includegraphics[width=.7\linewidth]{Icons/badge_sjtu.png}
+    \end{subfigure}
+\end{figure}
+%---------------------------------------------------------------------
+% 课程、个人信息
+\begin{center}
+    \Huge\textbf{#1}
+\end{center}
+
+\begin{center}
+    \LARGE\textbf{#2}
+\end{center}
+
+\vspace{1cm}
+
+\begin{table}[!h]
+    \centering
+    \Large
+    \begin{tabular}{lc}
+        \textbf{姓\qquad 名:} & \wideunderline[7cm]{#3}  \\
+        \textbf{学\qquad 号:} & \wideunderline[7cm]{#4}  \\
+        \textbf{学\qquad 院:} & \wideunderline[7cm]{#5}  \\
+    \end{tabular}
+\end{table}
+
+\vspace{0.5cm}
+
+\begin{center}
+    \Large\textbf{#6}
+\end{center}
+
+\newpage
+
+}
+
+
 % hyperref 宏包在最后调用
 \usepackage{hyperref}
 
