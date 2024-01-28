@@ -58,7 +58,15 @@ git clone https://gitee.com/yangsl306/report-template-MMMS.git
 cd report-template-MMMS
 ```
 
->只在 Linux 端测试过，Windows 端请自行测试（应该不难）。
+>只在 Linux、Mac 端测试过，Windows 端请自行测试（应该不难）。
+
+### Times New Roman 字体检查
+
+```bash
+fc-list :lang=en | grep Times
+```
+
+若 Linux、Mac 端无 Times New Roman 字体，将 `setup.tex` 中的 `\usepackage{fontspec};\setmainfont{Times New Roman}` 注释掉。
 
 ### Makefile 编译
 
@@ -105,7 +113,8 @@ latexmk -xelatex -time -halt-on-error main.tex
 ## To do
 
 - [ ] 页眉设置
-- [ ] 将数学字体设置为 Times New Roman
+- [x] 将英文字体设置为 Times New Roman
+- [ ] 设置公式字体
 - [ ] 摘要页设置
 - [x] 下划线粗细设置
 - [x] 代码环境
