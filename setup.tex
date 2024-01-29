@@ -1,5 +1,14 @@
 % !TEX root = ./main.tex
 
+% 英文字体设置
+% 检查系统中是否存在 Times New Roman 字体
+\IfFontExistsTF{Times New Roman}{
+  \usepackage{fontspec}
+  \setmainfont{Times New Roman}
+}{
+  \typeout{Times New Roman font not found. Using default font.}
+}
+
 \usepackage[a4paper,left=3cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{bm}
@@ -74,7 +83,7 @@
 \setlength{\bibitemsep}{0pt}
 % 导入参考文献数据库
 \addbibresource{refs.bib}
-\renewcommand{\bibname}{参考文献}
+\renewcommand{\bibname}{Reference}
 
 
 % 使用三线表：toprule，midrule，bottomrule。
