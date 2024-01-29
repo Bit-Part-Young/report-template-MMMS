@@ -26,7 +26,6 @@
 │   ├── Figures
 │   ├── Icons
 ├── contents
-│   ├── abstract.tex
 │   ├── appendix.tex
 │   ├── content.tex
 ├── main.tex
@@ -35,13 +34,12 @@
 ```
 
 - `main.tex` - 主文件，需修改封面文字信息，如实验报告名称、姓名、学号和日期
-- `setup.tex` - 配置 tex 文件，包含宏包及其设置、部分命令设置等（**基本不用修改**）
-- `contents/` - 存放文档各部分的 tex 文件，如摘要、正文、附录等（**在此部分进行修改**）
-  - `abstract.tex` - 若需要写摘要，请在 `main.tex` 文件取消相应注释
+- `setup.tex` - 配置 `tex` 文件，包含宏包及其设置、部分命令设置等（**基本不用修改**）
+- `contents/` - 文档各部分的 `tex` 文件，如摘要、正文、附录等（**在此部分进行修改**）
   - `content.tex` - 正文部分，根据需要添加、删除内容
   - `appendix.tex` - 附录部分，根据需要添加、删除内容，如代码
-- `refs.bib` - 参考文献 bib 文件（**有则在此修改**）
-- `assets/` - 存放文档封面、数据图片等图片文件（**在此添加数据图片**）
+- `refs.bib` - 参考文献 `bib` 文件（**有则在此修改**）
+- `assets/` - 文档封面、数据等图片文件（**在此添加数据图片**）
 
 ---
 
@@ -59,14 +57,6 @@ cd report-template-MMMS
 ```
 
 >只在 Linux、Mac 端测试过，Windows 端请自行测试（应该不难）。
-
-### Times New Roman 字体检查
-
-```bash
-fc-list :lang=en | grep Times
-```
-
-若 Linux、Mac 端无 Times New Roman 字体，将 `setup.tex` 中的 `\usepackage{fontspec};\setmainfont{Times New Roman}` 注释掉。
 
 ### Makefile 编译
 
@@ -102,7 +92,7 @@ latexmk -xelatex -time -halt-on-error main.tex
 
 ## 文档内容
 
-完整文档内容见 [main_report_20231017.pdf](./main_report_20231017.pdf)。
+完整文档内容见 [main_report_20240129.pdf](./main_report_20240129.pdf)。
 
 ![文档封面](./assets/pdf_fig_cover.png)
 
@@ -113,18 +103,22 @@ latexmk -xelatex -time -halt-on-error main.tex
 ## To do
 
 - [ ] 页眉设置
-- [x] 将英文字体设置为 Times New Roman
 - [ ] 设置公式字体
 - [ ] 摘要页设置
+- [ ] 参考文献的标签指向有问题，指向了结论部分
+- [ ] 本 LaTeX 模板的页面右边距设置与 SJTUThesis 有差别，待调整
+- [x] 将英文字体设置为 Times New Roman
 - [x] 下划线粗细设置
 - [x] 代码环境
 - [x] "参考文献"字符居中设置
-- [ ] 参考文献的标签指向有问题，指向了结论部分
-- [ ] 本 LaTeX 模板的页面右边距设置与 SJTUThesis 有差别，待调整
 
 ---
 
 ## Changelog
+
+### 2024-01-29
+
+- 根据系统有无 Times New Roman 英文字体自动设置
 
 ### 2023-10-17
 
